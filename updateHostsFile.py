@@ -200,14 +200,14 @@ def main():
         "--whitelist",
         "-w",
         dest="whitelistfile",
-        default=path_join_robust(BASEDIR_PATH, "whitelist"),
+        default=path_join_robust(BASEDIR_PATH, "whitelist.example"),
         help="Whitelist file to use while generating hosts files.",
     )
     parser.add_argument(
         "--blacklist",
         "-x",
         dest="blacklistfile",
-        default=path_join_robust(BASEDIR_PATH, "blacklist"),
+        default=path_join_robust(BASEDIR_PATH, "blacklist.example"),
         help="Blacklist file to use while generating hosts files.",
     )
 
