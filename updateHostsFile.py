@@ -76,6 +76,7 @@ def get_defaults():
         "readmedatafilename": path_join_robust(BASEDIR_PATH, "readmeData.json"),
         "exclusionpattern": r"([a-zA-Z\d-]+\.){0,}",
         "exclusionregexs": [],
+        "userline": [],
         "exclusions": [],
         "commonexclusions": ["hulu.com"],
         "blacklistfile": path_join_robust(BASEDIR_PATH, "blacklist"),
@@ -90,6 +91,14 @@ def main():
     parser = argparse.ArgumentParser(
         description="Creates a unified hosts "
         "file from hosts stored in the data subfolders."
+    )
+    parser.add_argument(
+        "--add",
+        "-d",
+        dest="userline",
+        default=[],
+        nargs="*",
+        help="Add line from user to hosts file",
     )
     parser.add_argument(
         "--auto",
@@ -291,6 +300,7 @@ def main():
         numberofrules=number_of_rules,
         outputsubfolder=output_subfolder,
         skipstatichosts=skip_static_hosts,
+        userline=settings["userline"],
     )
     final_file.close()
 
@@ -1159,6 +1169,8 @@ def write_opening_header(final_file, **header_params):
             write_data(final_file, "127.0.0.53 " + socket.gethostname() + "\n")
 
         write_data(final_file, "\n")
+        for user_line in  header_params["userline"]:
+            write_data(final_file, user_line+"\n")
 
     preamble = path_join_robust(BASEDIR_PATH, "myhosts")
     maybe_copy_example_file(preamble)
