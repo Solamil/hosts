@@ -1,6 +1,7 @@
 .idea
 *.iml
 myhosts
+update_blocklist.sh
 readmeData.json
 hosts-*
 /web.config

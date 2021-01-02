@@ -1,4 +1,4 @@
-# blacklist
+# blacklist_neo
 #
 # The contents of this file (containing a listing of additional domains in
 # 'hosts' file format) are appended to the unified hosts file during the
@@ -7,9 +7,8 @@
 
 # 0.0.0.0 example.com
 
-0.0.0.0 plus.google.com
-0.0.0.0 google.com
-0.0.0.0 www.google.com
+# 0.0.0.0 google.com
+#0.0.0.0 www.google.com
 0.0.0.0 google.ac
 0.0.0.0 google.ad
 0.0.0.0 google.ae

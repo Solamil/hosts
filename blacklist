@@ -6,7 +6,7 @@
 # 'example.com':
 
 # 0.0.0.0 example.com
-
+0.0.0.0 instagram.com
 0.0.0.0 plus.google.com
 0.0.0.0 google.com
 0.0.0.0 www.google.com
